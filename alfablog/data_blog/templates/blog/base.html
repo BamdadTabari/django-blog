@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Data Blog</title>
-</head>
-<body>
-    <header>
-        <h1>Data Blog</h1>
-    </header>
-
-    <nav>
-        <a href="{% url 'data_blog:post_list' %}">Home</a>
-    </nav>
-
-    <main>
-        {% block content %}
-        {% endblock content %}
-    </main>
-
-    <footer>
-        &copy; 2023 Data Blog
-    </footer>
-</body>
+    <head>
+        <title>Data Blog</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}">
+    </head>
+    <body>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">Data Blog</h1>
+            </div>
+        </section>
+    
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="{% url 'data_blog:post_list' %}">
+                        Home
+                    </a>
+                </div>
+            </div>
+        </nav>
+    
+        <section class="section">
+            <div class="container">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </section>
+    
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    &copy; 2023 Data Blog
+                </p>
+            </div>
+        </footer>
+    </body>
 </html>
