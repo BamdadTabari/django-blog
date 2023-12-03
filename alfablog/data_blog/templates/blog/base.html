@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Blog</title>
+</head>
+<body>
+    <header>
+        <h1>Data Blog</h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'data_blog:post_list' %}">Home</a>
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer>
+        &copy; 2023 Data Blog
+    </footer>
+</body>
+</html>
