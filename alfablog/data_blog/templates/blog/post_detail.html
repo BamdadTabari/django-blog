@@ -1,11 +1,19 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    <article class="post">
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.content }}</p>
-        <div class="date">
-            Posted on {{ post.date_posted }}
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">{{ post.title }}</p>
+        </header>
+        <div class="card-content">
+            <div class="content">
+                {{ post.content }}
+                <br>
+                <time datetime="{{ post.date_posted }}">Posted on {{ post.date_posted }}</time>
+            </div>
         </div>
-    </article>
+        <footer class="card-footer">
+            <a href="{% url 'data_blog:post_list' %}" class="card-footer-item">Back to posts</a>
+        </footer>
+    </div>
 {% endblock content %}
